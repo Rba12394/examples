@@ -1,0 +1,22 @@
+
+
+addons:
+  apt:
+    sources:
+    # add PPAs with more up-to-date toolchains
+    - ubuntu-toolchain-r-test
+    packages:
+    # install toolchains
+    - g++-4.9
+    - strace
+      
+env:
+  - TEST_DIR=systemcall
+  - TEST_DIR=c-tutorial
+ 
+compiler:  
+    - g++-4.9
+    
+script: cd $TEST_DIR/tests && cmake -DCMAKE_CXX_COMPILER=g++-4.9 .. && make && ctest -V  
+
+
