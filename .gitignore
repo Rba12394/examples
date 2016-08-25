@@ -28,7 +28,7 @@
 *.out
 *.app
 
-# Cmake
+# Cmake files
 CMakeCache.txt
 CMakeFiles
 CMakeScripts
