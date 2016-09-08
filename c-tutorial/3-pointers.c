@@ -12,10 +12,11 @@
 // That means it holds the address of an int.
 void f1(int *x)
 {
-  printf("Value of x at beginning of function is: %d\n", *x);  
+  printf("Value of x at beginning of function is: %d, the pointer is %p\n", *x,x);  
   // This is how you "de-reference" a pointer and assign a value
   // to be stored at the address the pointer holds.
   *x = 37;
+  printf("Value of x at end of function is: %d, the pointer is %p\n", *x,x);  
 }
 
 int main(int argc, char *argv[])
