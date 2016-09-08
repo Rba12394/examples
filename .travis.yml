@@ -13,7 +13,7 @@ addons:
 env:
   - TEST_DIR=systemcall
   - TEST_DIR=c-tutorial
- 
+  - TEST_DIR=processManagement
 compiler:  
     - g++-4.9
     
