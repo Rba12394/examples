@@ -39,4 +39,5 @@ main(int argc, char *argv[])
   */
 
   printf("From process %d, value of var is %d.\n", getpid(), var);
+  return 0;
 }

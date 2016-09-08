@@ -144,4 +144,7 @@ main (int argc, char *argv[])
       printf ("From process %d, sent SIGTERM to %d\n", getpid (), childpid);
       sleep (1);
     }
+	
+	return 0;
+	
 }
