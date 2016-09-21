@@ -2,9 +2,12 @@
 #include <errno.h>
 #include <sys/wait.h>
 #include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 int
 main (int argc, char *argv[])
 {
+
   int var = 1;
 
   /* The fork system call is used by a process to request
@@ -28,7 +31,7 @@ main (int argc, char *argv[])
       /* we enter this block only if fork returns 0,
          which indicates that we are the child process */
       printf ("Value of var from child = %d\n", var);
-      ++var;			// var is only incremented in the child process
+      ++var;                    // var is only incremented in the child process
     }
   else
     {
@@ -38,40 +41,41 @@ main (int argc, char *argv[])
       int retvalue = 0;
       while (retvalue != c1)
 
-	{
-	  status = 0;
-	  retvalue = waitpid (c1, &status, 0);
-	  if (retvalue < 0)
+        {
+          status = 0;
+          retvalue = waitpid (c1, &status, 0);
+          if (retvalue < 0)
 
-	    {
-	      char buffer[256];
-	      strerror_r (errno, buffer, 256);
-	      printf ("error occured %s\n", buffer);
-	      break;
-	    }
+            {
+              char buffer[256];
+              strerror_r (errno, buffer, 256);
+              printf ("error occured %s\n", buffer);
+              break;
+            }
 
-	  else
+          else
 
-	    {
-	      printf ("state of process %d changed - ", retvalue);
-	      if (WIFEXITED (status))
-		{
-		  printf ("exited, status=%d\n", WEXITSTATUS (status));
-		}
-	      else if (WIFSIGNALED (status))
-		{
-		  printf ("killed by signal %d\n", WTERMSIG (status));
-		}
-	      else if (WIFSTOPPED (status))
-		{
-		  printf ("stopped by signal %d\n", WSTOPSIG (status));
-		}
-	      else if (WIFCONTINUED (status))
-		{
-		  printf ("continued\n");
-		}
-	    }
-	}
+            {
+              printf ("state of process %d changed - ", retvalue);
+              if (WIFEXITED (status))
+                {
+                  printf ("exited, status=%d\n", WEXITSTATUS (status));
+                }
+              else if (WIFSIGNALED (status))
+                {
+                  printf ("killed by signal %d\n", WTERMSIG (status));
+                }
+              /* These conditions can never be true because we invoked waitpid with 0 option.
+                 else if (WIFSTOPPED (status))
+                 {
+                 printf ("stopped by signal %d\n", WSTOPSIG (status));
+                 }
+                 else if (WIFCONTINUED (status))
+                 {
+                 printf ("continued\n");
+                 } */
+            }
+        }
     }
 
   /* The line below will be executed twice: once from the
