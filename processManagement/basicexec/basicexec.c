@@ -2,14 +2,15 @@
 #include <unistd.h>
 
 int
-main(int argc, char *argv[])
+main (int argc, char *argv[])
 {
   int pid;
 
-  pid = fork();
+  pid = fork ();
 
-  if (pid == 0) {
-    execl("/usr/bin/sort", "sort", "-n" , "input.txt", (char*) NULL);
-  }
+  if (pid == 0)
+    {
+      execl ("/usr/bin/sort", "sort", "-n", "input.txt", (char *) NULL);
+    }
   return 0;
 }

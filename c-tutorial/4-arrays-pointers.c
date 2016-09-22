@@ -4,7 +4,8 @@
    Pointers and arrays are very closely related.
    For an explanation, see page 97 in the K & R book. */
 
-void f1(int *x)
+void
+f1 (int *x)
 {
   // (x + 1) refers to the second element in the array
 
@@ -12,7 +13,8 @@ void f1(int *x)
   *(x + 1) = 31;
 }
 
-int main(int argc, char *argv[])
+int
+main (int argc, char *argv[])
 {
   // x is an array that will hold 3 ints.
   int x[3];
@@ -21,11 +23,11 @@ int main(int argc, char *argv[])
   x[0] = 1;
 
   // we can pass the address like this
-  f1(x);
+  f1 (x);
 
   // we can also pass the address of the array like this
-  f1(&x[0]);
+  f1 (&x[0]);
 
-  printf("Value of x[0] after calling function is: %d\n", x[1]);
+  printf ("Value of x[0] after calling function is: %d\n", x[1]);
   return 0;
 }

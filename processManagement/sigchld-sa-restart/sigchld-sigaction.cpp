@@ -7,9 +7,15 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <iostream>
-void writehere (char *msg) { write (1, msg, strlen (msg)); }
+void
+writehere (const char *msg)
+{
+  write (1, msg, strlen (msg));
+}
+
 // async-safe implementation
-void positive_integer_to_string (int number, char *buffer, int length)
+void
+positive_integer_to_string (int number, char *buffer, int length)
 {
   // count number of digits
   int numdigits, num;
@@ -33,7 +39,8 @@ void positive_integer_to_string (int number, char *buffer, int length)
   buffer[numdigits] = '\0';
 }
 
-void signal_handler (int signum)
+void
+signal_handler (int signum)
 {
 
   if (signum == SIGCHLD)
@@ -83,7 +90,8 @@ void signal_handler (int signum)
     }
 }
 
-int main (int argc, char *argv[])
+int
+main (int argc, char *argv[])
 {
   int var = 1;
 
@@ -118,7 +126,7 @@ int main (int argc, char *argv[])
       /* we enter this block only if fork returns 0,
          which indicates that we are the child process */
       printf ("Value of var from child = %d\n", var);
-      ++var; // var is only incremented in the child process
+      ++var;                    // var is only incremented in the child process
     }
   else
     {

@@ -1,7 +1,13 @@
+#include <unistd.h>
 #include <stdio.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <string.h>
 
 int
-main(int argc, char *argv[])
+main (int argc, char *argv[])
 {
   int var = 1;
 
@@ -17,17 +23,20 @@ main(int argc, char *argv[])
      The child process gets a return value of 0, and
      the parent process gets a return value equal to the
      process ID of the newly created child.
-  */
+   */
 
-  if (fork() == 0) {
-    /* we enter this block only if fork returns 0,
-       which indicates that we are the child process */
-    printf("Value of var from child = %d\n", var);
-    ++var; // var is only incremented in the child process
-  } else {
-    // the parent process does not increment var; it sleeps instead
-    sleep(2);
-  }
+  if (fork () == 0)
+    {
+      /* we enter this block only if fork returns 0,
+         which indicates that we are the child process */
+      printf ("Value of var from child = %d\n", var);
+      ++var;                    // var is only incremented in the child process
+    }
+  else
+    {
+      // the parent process does not increment var; it sleeps instead
+      sleep (2);
+    }
 
   /* The line below will be executed twice: once from the
      child and once from the parent.
@@ -36,8 +45,8 @@ main(int argc, char *argv[])
      separate address spaces; thus, because only the child
      incremented the value of var, only the child will
      print that the value of var is 2.
-  */
+   */
 
-  printf("From process %d, value of var is %d.\n", getpid(), var);
+  printf ("From process %d, value of var is %d.\n", getpid (), var);
   return 0;
 }

@@ -1,8 +1,11 @@
+#include <unistd.h>
 #include <stdio.h>
 #include <signal.h>
 #include <stdlib.h>
 #include <errno.h>
-
+#include <sys/types.h>
+#include <string.h>
+#include <sys/wait.h>
 
 void
 signal_handler (int signum)
@@ -16,39 +19,39 @@ signal_handler (int signum)
   if (signum == SIGCHLD)
     {
       printf ("From process %d, a child process has finished execution\n",
-	      getpid ());
+              getpid ());
       int status = 0;
       int child_pid = wait (&status);
       if (child_pid < 0)
 
-	{
-	  char buffer[256];
-	  strerror_r (errno, buffer, 256);
-	  printf ("error occured %s\n", buffer);
-	  return;
-	}
+        {
+          char buffer[256];
+          strerror_r (errno, buffer, 256);
+          printf ("error occured %s\n", buffer);
+          return;
+        }
 
       else
 
-	{
-	  printf ("state of process %d changed - ", child_pid);
-	  if (WIFEXITED (status))
-	    {
-	      printf ("exited, status=%d\n", WEXITSTATUS (status));
-	    }
-	  else if (WIFSIGNALED (status))
-	    {
-	      printf ("killed by signal %d\n", WTERMSIG (status));
-	    }
-	  else if (WIFSTOPPED (status))
-	    {
-	      printf ("stopped by signal %d\n", WSTOPSIG (status));
-	    }
-	  else if (WIFCONTINUED (status))
-	    {
-	      printf ("continued\n");
-	    }
-	}
+        {
+          printf ("state of process %d changed - ", child_pid);
+          if (WIFEXITED (status))
+            {
+              printf ("exited, status=%d\n", WEXITSTATUS (status));
+            }
+          else if (WIFSIGNALED (status))
+            {
+              printf ("killed by signal %d\n", WTERMSIG (status));
+            }
+          else if (WIFSTOPPED (status))
+            {
+              printf ("stopped by signal %d\n", WSTOPSIG (status));
+            }
+          else if (WIFCONTINUED (status))
+            {
+              printf ("continued\n");
+            }
+        }
     }
 
 }
@@ -78,31 +81,31 @@ main (int argc, char *argv[])
       /* we enter this block only if fork returns 0,
          which indicates that we are the child process */
       printf ("Value of var from child = %d\n", var);
-      ++var;			// var is only incremented in the child process
+      ++var;                    // var is only incremented in the child process
       if (signal (SIGINT, signal_handler) == SIG_ERR)
-	{
-	  printf
-	    ("From process %d, error while installing handler for SIGINT\n",
-	     getpid ());
-	}
+        {
+          printf
+            ("From process %d, error while installing handler for SIGINT\n",
+             getpid ());
+        }
       if (signal (SIGUSR1, signal_handler) == SIG_ERR)
-	{
-	  printf
-	    ("From process %d, error while installing handler for SIGUSR1\n",
-	     getpid ());
-	}
+        {
+          printf
+            ("From process %d, error while installing handler for SIGUSR1\n",
+             getpid ());
+        }
       if (signal (SIGTERM, signal_handler) == SIG_ERR)
-	{
-	  printf
-	    ("From process %d, error while installing handler for SIGTERM\n",
-	     getpid ());
-	}
+        {
+          printf
+            ("From process %d, error while installing handler for SIGTERM\n",
+             getpid ());
+        }
       if (signal (SIGINT, signal_handler) == SIG_ERR)
-	{
-	  printf
-	    ("From process %d, error while installing handler for SIGINT\n",
-	     getpid ());
-	}
+        {
+          printf
+            ("From process %d, error while installing handler for SIGINT\n",
+             getpid ());
+        }
 
 
     }
@@ -125,15 +128,15 @@ main (int argc, char *argv[])
   if (childpid == 0)
     {
       while (1)
-	sleep (1);
+        sleep (1);
     }
   else
     {
       if (signal (SIGCHLD, signal_handler) == SIG_ERR)
-	{
-	  printf ("process %d: error while installing handler for SIGINT\n",
-		  getpid ());
-	}
+        {
+          printf ("process %d: error while installing handler for SIGINT\n",
+                  getpid ());
+        }
       kill (childpid, SIGINT);
       printf ("From process %d, sent SIGINT to %d\n", getpid (), childpid);
       sleep (1);
@@ -144,7 +147,7 @@ main (int argc, char *argv[])
       printf ("From process %d, sent SIGTERM to %d\n", getpid (), childpid);
       sleep (1);
     }
-	
-	return 0;
-	
+
+  return 0;
+
 }
