@@ -3,7 +3,8 @@
 #include "mythreads.h"
 #include <stdlib.h>
 #include <pthread.h>
-
+#include <unistd.h>
+#include <syscall.h>
 int max;
 volatile int balance = 0; // shared global variable
 
@@ -17,12 +18,15 @@ mythread(void *arg)
 	balance = balance + 1; // shared: only one
     }
     printf("%s: done\n", letter);
+
+    printf("From the thread getpid: %d getpthread_self: %lu tid:%lu\n",getpid(), pthread_self(), syscall(SYS_gettid));
     return NULL;
 }
                                                                              
 int
 main(int argc, char *argv[])
 {                    
+    printf("From the main process thread: getpid: %d getpthread_self: %lu tid:%lu\n",getpid(), pthread_self(), syscall(SYS_gettid));
     if (argc != 2) {
 	fprintf(stderr, "usage: main-first <loopcount>\n");
 	exit(1);
