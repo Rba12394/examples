@@ -20,5 +20,4 @@ main (int argc, char *argv[])
   write(f1,"text",strlen("text"));
   write(STDOUT_FILENO,"text\n",strlen("text\n"));
   close(f1);
-
 }
