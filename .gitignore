@@ -1,9 +1,4 @@
 # Compiled Object files
-bin
-build
-*.xml
-*.iml
-*~
 *.slo
 *.lo
 *.o
