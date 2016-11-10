@@ -8,13 +8,9 @@
 int main (int argc, char **argv)
 {
 //  mqd_t mq = mq_open ("/MyCoolMQ", O_RDONLY | O_CREAT);
- struct mq_attr config;
-  config.mq_flags = 0;
-  config.mq_maxmsg = 3;
-  config.mq_msgsize = 5;
-  config.mq_curmsgs = 0;
 
-  mqd_t mq = mq_open ("/MyCoolMQ", O_RDONLY | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH, &config);
+
+  mqd_t mq = mq_open ("/MyCoolMQ", O_RDONLY , S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 
   if (mq == -1)
     {

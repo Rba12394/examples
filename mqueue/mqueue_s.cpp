@@ -27,6 +27,7 @@ int main (int argc, char **argv)
       int count = snprintf (buf, 5, "%lu ", i);
       std::cerr << "Sending message " << buf << std::endl;
       mq_send (mq, buf, count, i);
+
       sleep (1);
     }
   mq_close(mq);
