@@ -10,7 +10,7 @@ int main (int argc, char **argv)
 //  mqd_t mq = mq_open ("/MyCoolMQ", O_RDONLY | O_CREAT);
 
 
-  mqd_t mq = mq_open ("/MyCoolMQ", O_RDONLY , S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+  mqd_t mq = mq_open ("/MyCoolMQ_int", O_RDONLY , S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 
   if (mq == -1)
     {
@@ -21,12 +21,14 @@ int main (int argc, char **argv)
   struct mq_attr attr;
   mq_getattr (mq, &attr);
 
-  char *buf = new char[attr.mq_maxmsg];
+
 
   for ( ;; )
     {
       unsigned int prio;
-      ssize_t received = mq_receive (mq, buf, attr.mq_msgsize, &prio);
+      unsigned int message;
+      ssize_t received = mq_receive (mq, (char *) &message, sizeof(message),
+                                     &prio);
 
       if (received == -1)
         {
@@ -36,7 +38,11 @@ int main (int argc, char **argv)
 
       if (prio == 24) break;
 
-      std::cerr << "Received " << received << " bytes at " << prio << "priority: " << buf << std::endl;
+      std::cerr << "Received " << received << " bytes at " << prio <<
+                                                                   "priority:"
+                                                                       " "
+                                                                       "message:" <<
+                                                                           message << std::endl;
     }
   mq_close(mq);
   mq_unlink ("/MyCoolMQ");
