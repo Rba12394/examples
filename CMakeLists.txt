@@ -1,6 +1,7 @@
 cmake_minimum_required (VERSION 2.8.6)
 project (examples)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/bin")
+add_subdirectory(timer)
 add_subdirectory(pipe)
 add_subdirectory(c-tutorial)
 add_subdirectory(scheduling)

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/fileDescriptors/fd_example.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/fileDescriptors/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c-tutorial/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c-tutorial/2-initialize.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c-tutorial/1-hello.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c-tutorial/5-function-pointers.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c-tutorial/3-pointers.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/c-tutorial/4-arrays-pointers.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/systemcall/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/systemcall/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/fileSystemWatch/watch.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/fileSystemWatch/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/memorymanagement/mmap_example/example_mmap.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/memorymanagement/mmap_example/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/memorymanagement/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/memorymanagement/malloc/malloc.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/memorymanagement/malloc/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/memorymanagement/malloc/ownmalloc.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/basicsignal/basicsignal.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/basicsignal/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/basicexec/basicexec.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/basicexec/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/sigchld/sigchld.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/sigchld/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/basicfork/basicfork.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/basicfork/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/sigchld-sa-restart/sigchld-sigaction.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/sigchld-sa-restart/sigchld-sigaction-sa-restart.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/sigchld-sa-restart/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/execvpexample/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/execvpexample/execvpexample.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/basicwait/basicwait.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/processManagement/basicwait/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/scheduling/scheduling.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/scheduling/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sockets/TCPEchoServer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sockets/TCPEchoServer-Thread.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sockets/PracticalSocket.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sockets/UDPEchoClient.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sockets/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sockets/PracticalSocket.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sockets/TCPEchoClient.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sockets/UDPEchoServer.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sharedMemory-2/shm_r.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sharedMemory-2/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sharedMemory-2/shm_s.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pipe/popen.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pipe/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/timer/gettime.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/timer/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/pthread_pop/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/pthread_pop/pthread_pop_example.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/race_condition/t1-fix.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/race_condition/t1.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/race_condition/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/race_condition/basicmutex.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/introduction/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/introduction/main-thread-5.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/introduction/main-thread-3.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/introduction/main-thread-1.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/introduction/main-thread-4.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/introduction/main-thread-2.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/introduction/main-thread-0.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/pthread_attr_example/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/pthread_attr_example/pthread_attr.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/threadcleanup/threadcleanup.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/threadcleanup/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/semaphore/shm_consume.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/semaphore/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/semaphore/shm_produce.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/pthread_join/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/pthread_join/t0.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/conditionvariables/condvar.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/threads/conditionvariables/CMakeLists.txt" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="Header Search Paths">
+        <CLASSES>
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
+          <root url="file:///usr/include" />
+          <root url="file:///usr/local/include" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+          <root url="file:///usr/lib/gcc/x86_64-linux-gnu/5/include" />
+          <root url="file:///usr/include" />
+          <root url="file:///usr/local/include" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
