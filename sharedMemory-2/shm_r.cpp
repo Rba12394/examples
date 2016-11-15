@@ -67,7 +67,5 @@ int main (int argc, char **argv)
     }
 
   exit:
-  shm_unlink ("/SHM_example");
-  *(reinterpret_cast < int *>(shm_segment)) = 0;
   return ret;
 }

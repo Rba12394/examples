@@ -64,11 +64,7 @@ int main (int argc, char **argv)
       std::cerr << "Sending message " << i << std::endl;
       shm_segment->i=i;
 
-      sleep (1);
     }
-
-  exit:
-    shm_unlink ("/SHM_example");
-    *(reinterpret_cast < int *>(shm_segment)) = 0;
+exit:
   return ret;
 }
