@@ -28,6 +28,6 @@ main (int argc, char *argv[])
   // we can also pass the address of the array like this
   f1 (&x[0]);
 
-  printf ("Value of x[0] after calling function is: %d\n", x[1]);
+  printf ("Value of x[1] after calling function is: %d\n", x[1]);
   return 0;
 }
