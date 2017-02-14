@@ -5,7 +5,7 @@
 #include <linux/kernel.h>	/* Needed for KERN_INFO */
 
 int
-init_module (void)
+startup (void)
 {
   printk (KERN_INFO "Hello world 1.\n");
 
@@ -16,7 +16,11 @@ init_module (void)
 }
 
 void
-cleanup_module (void)
+cleanup (void)
 {
   printk (KERN_INFO "Goodbye world 1.\n");
 }
+MODULE_LICENSE ("GPL");
+
+module_init (startup);
+module_exit (cleanup);
