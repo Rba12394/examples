@@ -3,6 +3,11 @@
 #include <pthread.h>
 #include <stdlib.h>
 
+void pexit(void){
+
+printf("process dead\n");
+}
+
 void
 cleanup(void *arg)
 {
@@ -18,7 +23,7 @@ void *mythread(void *arg) {
     printf("thread  push complete\n");
     sleep(2);
     pthread_cleanup_pop(0);
-    pthread_cleanup_pop(1);
+    pthread_cleanup_pop(0);
     return NULL;
 }
 
@@ -26,6 +31,7 @@ int
 main(int argc, char *argv[]) {
     pthread_t p1, p2;
     int rc;
+    atexit(pexit);
     printf("main: begin\n");
     rc = pthread_create(&p1, NULL, mythread, "A"); assert(rc == 0);
     rc = pthread_create(&p2, NULL, mythread, "B"); assert(rc == 0);
