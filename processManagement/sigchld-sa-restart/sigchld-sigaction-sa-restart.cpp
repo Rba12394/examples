@@ -71,6 +71,7 @@ signal_handler (int signum)
 
             {
               char buffer[256];
+              memset(buffer,0,256);
               strerror_r (errno, buffer, 256);
               write (1, buffer, strlen (buffer));
               write (1, "\n", 1);
