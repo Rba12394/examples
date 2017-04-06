@@ -33,12 +33,14 @@ tracked per open file: CURRENT OFFSET
 cat file1
 strace cat file1
 make file bigger
+```
   @i = 0 
   while ($i < 5000)
     echo a >> file1
     @ i ++
     echo $i
   end
+```
 QUESTION: HOW BIG IS THE FILE?
 strace cat file1 > /dev/null
   make sure to TRACK CURRENT OFFSET
@@ -49,7 +51,12 @@ how do you grow a file?
 use lseek() to seek to the end of the file
 
 TRUNCATE (make file smaller)
-FILE: Files/trunc.c (makes it zero-sized)
+FILE: Files/trunc.c (makes it zero-sized) 
+  uses O_TRUNC: 
+  
+ O_TRUNC
+If the file exists and is a regular file, and the file is successfully opened O_RDWR or O_WRONLY, its length is truncated to 0 and the mode and owner are unchanged. It will have no effect on FIFO special files or terminal device files. Its effect on other file types is implementation-dependent. The result of using O_TRUNC with O_RDONLY is undefined.
+
 strace trunc
 ls -al file1
 can also use truncate() system call to make file smaller (not necessarily zero)
